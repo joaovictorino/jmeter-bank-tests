@@ -1,0 +1,1 @@
+./jmeter -n -t /home/joao/Source/Test/jmeter-restassured-bank-tests/jmeter/restBank.jmx -l /home/joao/Source/Test/jmeter-restassured-bank-tests/jmeter/restBank.jtl -e -o /home/joao/Source/Test/jmeter-restassured-bank-tests/jmeter/report

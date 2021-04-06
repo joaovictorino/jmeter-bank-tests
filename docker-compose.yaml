@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  springapi:
+    driver: bridge
+
+services:
+  mysqldb:
+    image: mysql:8.0.22
+    networks:
+      - springapi
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=account
+      - MYSQL_TCP_PORT=3306
+  springapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - springapi
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
