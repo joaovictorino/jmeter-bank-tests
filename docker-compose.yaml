@@ -14,9 +14,7 @@ services:
       - MYSQL_DATABASE=account
       - MYSQL_TCP_PORT=3306
   springapi:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     restart: always
     networks:
       - springapi
